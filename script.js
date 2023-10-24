@@ -97,7 +97,11 @@ function selectAnswer(e){
 
 function showScore(){
     resetState();
-    questionElement.innerHTML = `Your scored ${score} out of ${questions.length}!`;
+    if(score === questions.length){
+        questionElement.innerHTML =`Puntuaste ${score} de ${questions.length} ¡tienes una puntuacion perfecta tomale captura y tienes un cupo para que el dueño de este quiz te invite para un helado!`;
+        }else{
+            questionElement.innerHTML = `Mejor suerte para la proxima`;
+        }
     nextButton.innerHTML = "Play Again";
     nextButton.style.display = "block";
 }
